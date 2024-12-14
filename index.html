@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <span class="main">Binary Converter</span><br />
+      <textarea
+        autofocus
+        class="inputBinary"
+        id="inputBinary"
+        onKeyUp="convertBinary()"
+      ></textarea>
+      <textarea class="outputBinary" id="outputBinary" readonly></textarea>
+      <div class="about">Made by <strong>Omar</strong></div>
+    </div>
+    <script>
+      function convertBinary() {
+        var output = document.getElementById("outputBinary");
+        var input = document.getElementById("inputBinary").value;
+        output.value = "";
+        for (i = 0; i < input.length; i++) {
+          var e = input[i].charCodeAt(0);
+          var s = "";
+          do {
+            var a = e % 2;
+            e = (e - a) / 2;
+            s = a + s;
+          } while (e != 0);
+          while (s.length < 8) {
+            s = "0" + s + " ";
+          }
+          output.value += s;
+        }
+      }
+      let sam = "B, A, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, r, S, T, U, V, W, X, Y, Z."
+      console.log(sam.charCodeAt(29 
+      ));
+      
+      // 01010011 01100001 01101101 01100101 01100101 01110010
+      // 01110011 01100001 01101101 01100101 01100101 01110010
+
+
+      // 01001000 01101111 01110111 00100000 01100001 01110010 01100101 00100000 01111001 01101111 01110101 How are you
+    </script>
+  </body>
+</html>
